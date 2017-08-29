@@ -1,0 +1,24 @@
+<ons-navigator title="Navigator" var="rank_private.navi">
+      <ons-page id="rank_private" ng-controller="RankBoardController">
+        <ons-list class="plan-list">
+          <ons-list-item modifier="chevron tappable" class="plan" ng-repeat="group in list_private_rank track by $index" style="border-bottom: 1px solid #e6e6e6;" onclick="">
+            <ons-row>
+              <ons-col class="plan-right">
+
+                <div class="plan-name">{{group.name}}</div>
+
+                <div class="plan-info">
+                  <div>
+                    <ons-icon class="plan-icon" icon="ion-ios-person"></ons-icon>{{group.number_member}} member
+                  </div>
+                </div>
+              </ons-col>
+            </ons-row>
+          </ons-list-item>
+        </ons-list>
+        <ons-fab position="right bottom" onclick="">
+          <ons-ripple></ons-ripple>
+          <ons-icon icon="ion-plus-round"></ons-icon>
+        </ons-fab>
+      </ons-page>
+    </ons-navigator>

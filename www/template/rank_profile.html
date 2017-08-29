@@ -1,0 +1,57 @@
+<ons-page modifier="shop-details" ng-controller="RankBoardController">
+        <ons-toolbar modifier="transparent">
+          <div class="left" ng-click="rank.navi.popPage()">
+            <ons-toolbar-button><ons-icon icon="ion-arrow-left-c" style="color: white; font-size: 28px;" fixed-width="false"></ons-icon></ons-toolbar-button>
+          </div>
+          <div class="center">
+            {{list_ranks[current_people].name}}
+          </div>
+        </ons-toolbar>
+
+        <div class="card" style="background: url('{{list_ranks[current_people].avatar}}') !important;background-color: white;background-repeat: no-repeat !important;background-size: cover !important;height: 250px;">
+
+          <div class="card-name">{{list_ranks[current_people].name}}</div>
+          <div class="card-desc">{{list_ranks[current_people].gmail}}<br>{{list_ranks[current_people].address}}</div>
+
+        </div>
+
+        <ons-list style="border-top: none"><ons-list-item style="line-height: 1; padding: 0;">
+          <ons-row class="action">
+            <ons-col class="action-col">
+              <div class="action-icon"><ons-icon icon="ion-ios-chatbubble-outline"></ons-icon></div>
+              <div class="action-label">Message</div>
+            </ons-col>
+
+            <ons-col class="action-col">
+              <div class="action-icon"><ons-icon icon="ion-ios-compose-outline"></ons-icon></div>
+              <div class="action-label">Invite</div>
+            </ons-col>
+
+          </ons-row>
+        </ons-list-item></ons-list>
+
+        <ons-list style="border-top: 0;">
+          <ons-list-item modifier="chevron tappable">
+            <div class="prop-desc">
+              <ons-icon icon="fa-map-marker"></ons-icon>
+              {{list_ranks[current_people].address}}
+            </div>
+          </ons-list-item>
+
+          <ons-list-item modifier="chevron tappable">
+            <div class="prop-desc">
+              <ons-icon icon="fa-mobile"></ons-icon>
+              {{list_ranks[current_people].phone_number}}
+            </div>
+          </ons-list-item>
+
+          <ons-list-item modifier="chevron tappable">
+            <div class="prop-desc">
+              <ons-icon icon="ion-social-google-outline"></ons-icon>
+              {{list_ranks[current_people].gmail}}
+            </div>
+          </ons-list-item>
+
+        </ons-list>
+
+      </ons-page>

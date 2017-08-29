@@ -1,0 +1,75 @@
+<ons-navigator title="Navigator" var="tab_1.navi">
+        <ons-page id="list_todo" ng-controller="ListTodoController">
+          <div class="navigation-bar">
+            <div class="navigation-bar__center">
+              <div class="button-bar" style="width:200px; margin:8px auto 0;">
+                <div class="button-bar__item" ng-click="pending = true;">
+                  <input type="radio" name="navi-segment-a" checked>
+                  <div class="button-bar__button">Pedding</div>
+                </div>
+                <div class="button-bar__item" ng-click="pending = false;">
+                  <input type="radio" name="navi-segment-a">
+                  <div class="button-bar__button">Completed</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <ons-list class="plan-list">
+            <ons-list-item ng-if="pending == true" modifier="chevron tappable" class="plan" ng-repeat="todo_pending in list_todo_pending" ng-click="show_detail($index)" id="test" ng-style="{'color':todo_pending.highlight === '1' ? 'red' : '','backgroundColor':todo_pending.priority === '1' ? '#ffffb3' : ''}">
+              <ons-row>
+                <ons-col width="10px" class="plan-left pending-item" ng-click="amination_right($event);">
+                  <div class="plan-date" style="margin-left: -10px">
+                    <span style="font-size: 20px;">{{$index + 1}}</span>
+                  </div>
+                </ons-col>
+
+                <ons-col class="plan-right" onclick="home.navi.pushPage('template/pomo_timer.html',{ animation : 'slide' });">
+                  <div class="plan-name">{{todo_pending.name}}</div>
+
+                  <div class="plan-info">
+                    <div>
+                      <ons-icon class="plan-icon" icon="ion-ios-alarm"></ons-icon>{{todo_pending.created_at}}
+                    </div>
+                  </div>
+                </ons-col>
+                <ons-col width="30px" style="padding-top: 17px;" ng-show="{{todo_pending.priority === '1'}}">
+                  <ons-icon icon="ion-pin" size="30px" fixed-width="false" style="color: #ff9966"></ons-icon>
+                </ons-col>
+                <ons-col width="40px" ng-click="show('todo_option.html',$index)" modifier="tappable" style="padding-top: 15px;">
+                  <ons-icon icon="md-more-vert" size="30px" fixed-width="false" style="color: #ff9966"></ons-icon>
+                </ons-col>
+              </ons-row>
+            </ons-list-item>
+
+
+            <ons-list-item ng-if="pending == false" modifier="chevron tappable" class="plan" ng-repeat="todo_completed in list_todo_completed">
+              <ons-row>
+                <ons-col width="10px" class="plan-left pending-item" ng-click="amination_right($event);">
+                  <div class="plan-date" style="margin-left: -10px">
+                    <span style="font-size: 20px;">{{$index + 1}}</span>
+                  </div>
+                </ons-col>
+
+                <ons-col class="plan-right" onclick="home.navi.pushPage('template/pomo_timer.html');">
+                  <div class="plan-name">{{todo_completed.name}} </div>
+
+                  <div class="plan-info">
+                    <div>
+                      <ons-icon class="plan-icon" icon="ion-ios-alarm"></ons-icon>{{todo_completed.created_at}}
+                    </div>
+                  </div>
+                </ons-col>
+                <ons-col width="40px" ng-click="show('todo_option.html')" modifier="tappable" style="padding-top:15px;">
+                  <ons-icon icon="md-more-vert" size="30px" fixed-width="false" style="color: #ff9966"></ons-icon>
+                </ons-col>
+              </ons-row>
+            </ons-list-item>
+          </ons-list>
+          <ons-fab position="right bottom" onclick="home.navi.pushPage('template/new_todo.html');">
+            <ons-ripple></ons-ripple>
+            <ons-icon icon="md-edit"></ons-icon>
+          </ons-fab>
+
+        </ons-page>
+    </ons-navigator>

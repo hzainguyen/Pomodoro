@@ -1,0 +1,42 @@
+<ons-page id="pomo_timer" ng-controller="ListTodoController">
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button ng-click="home.navi.popPage();"><ons-icon icon="ion-arrow-left-c"></ons-icon></ons-toolbar-button>
+        </div>
+        <div class="center">Pomo Timer</div>
+      </ons-toolbar>
+      <div id="timer-count">
+        <div>
+          <div class="c100 p0 big green">
+              <span style="color: #fff;"><span class="minute">25</span> : <span class="second">00</span></span>
+              <div class="slice">
+                  <div class="bar"></div>
+                  <div class="fill"></div>
+              </div>
+          </div>
+        </div>
+        <ons-row>
+        <ons-col><button  class="button" id="start_timer" ng-click="timer_start()">Start</button></ons-col>
+        <ons-col><button  class="button" id="abandon_timer" ng-click="confirm_abandon(true)"">Abandon</button></ons-col>
+        </ons-row>
+      </div>
+
+      <ons-list>
+        <ons-list-item modifier="nodivider">
+          <div class="center">
+            <ons-input id="title-input" type="text" placeholder="I want to..." float value="{{list_todo_pending[current_todo].name}}"></ons-input>
+          </div>
+        </ons-list-item>
+        <ons-list-item modifier="nodivider">
+          <div class="center">
+            <ons-input id="category-input" type="text" placeholder="Category" float value="{{list_todo_pending[current_todo].category}}"></ons-input>
+          </div>
+        </ons-list-item>
+        <ons-list-item modifier="nodivider">
+          <div class="center">
+            <ons-input id="description-input" type="text" placeholder="Note" float value="{{list_todo_pending[current_todo].note}}"></ons-input>
+          </div>
+        </ons-list-item>
+      </ons-list>
+
+    </ons-page>

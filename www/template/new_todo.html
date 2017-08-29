@@ -1,0 +1,49 @@
+<ons-page id="new_todo" ng-controller="ListTodoController">
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button ng-click="home.navi.popPage();"><ons-icon icon="ion-arrow-left-c"></ons-icon></ons-toolbar-button>
+        </div>
+        <div class="center">New Pomo</div>
+        <div class="right">
+          <ons-toolbar-button ng-click="save_todo(app);"><ons-icon icon="md-save" modifier="material" class="ons-icon zmdi zmdi-save"></ons-icon></ons-toolbar-button>
+        </div>
+      </ons-toolbar>
+      <ons-list>
+        <ons-list-header>Add a new Pomo</ons-list-header>
+        <ons-list-item modifier="nodivider">
+          <div class="center">
+            <ons-input id="title-input" type="text" placeholder="I want to..." float></ons-input>
+          </div>
+        </ons-list-item>
+        <ons-list-item modifier="nodivider">
+          <div class="center">
+            <ons-input id="category-input" type="text" placeholder="Category" float></ons-input>
+          </div>
+        </ons-list-item>
+        <ons-list-item modifier="nodivider">
+          <div class="center">
+            <ons-input id="description-input" type="text" placeholder="Note" float></ons-input>
+          </div>
+        </ons-list-item>
+      </ons-list>
+
+      <ons-list>
+        <ons-list-header>Other options</ons-list-header>
+        <ons-list-item modifier="nodivider">
+          <label class="center" for="inner-highlight-input">
+            Highlight?
+          </label>
+          <label class="right">
+            <ons-switch id="highlight-input" input-id="inner-highlight-input"></ons-switch>
+          </label>
+        </ons-list-item>
+        <ons-list-item modifier="nodivider">
+          <label class="center" for="inner-urgent-input">
+            Priority?
+          </label>
+          <label class="right">
+            <ons-switch id="urgent-input" input-id="inner-urgent-input"></ons-switch>
+          </label>
+        </ons-list-item>
+      </ons-list>
+    </ons-page>
